@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+<script type="text/javascript">
+	function checkusername(){
+		var username=document.u1.username.value;
+		if(username=){
+			return true;
+		}
+		else{
+			alert("username must be entered");
+			return false;
+		}
+		}
+	
+</script>
+</head>
+<body>
+	<form name="u1" action="singlelinecomment.html" onsubmit="return checkusername()">"
+<label>
+  <label for="username"><br>
+  	Username:
+  </label>
+  <input type="text" id="username" placeholder="Enter Username" name="username" required><br>
+  <label for="Password"><br>
+  	Password:
+  </label>
+  <input type="password" id="Password" placeholder="Enter Password" name="password"
+  required><br>
+  <form>
+  	<input type="button" value="Login" onclick=""/> 
+  </form>
+
+</body>
+</html>
