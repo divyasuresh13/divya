@@ -1,0 +1,32 @@
+{
+    "student_details": [
+        {
+            "name": "Ammu",
+            "emailid": "ammu12@gmail.com",
+            "age": "25",
+            "address": "juhui"
+        },
+        {
+            "name": "achu",
+            "emailid": "achu11@gmail.com",
+            "age": "21",
+            "address": "ggtgtr"
+        },
+        {
+            "name": "malu",
+            "emailid": "maluz13@gmail.com",
+            "age": "20",
+            "address": "huhiuh"
+        },
+        {
+            "emp_name": "Nikhil",
+            "email": "nikhil@geeksforgeeks.org",
+            "job_profile": "Full Time"
+        },
+        {
+            "name": "Nikhil",
+            "email": "nikhil@geeksforgeeks.org",
+            "age": "22"
+        }
+    ]
+}
