@@ -1,0 +1,36 @@
+from tkinter import *
+from functools import partial
+
+def validateLogin(fname,lname,username, password):
+	print("fname entered :",fname.get())
+	print("lname entered :",lname.get())
+	print("username entered :",username.get())
+	print("password entered :",password.get())
+	return
+
+
+tkWindow = Tk()  
+tkWindow.geometry('400x150')  
+tkWindow.title('Registration Form')
+
+fnameLabel = Label(tkWindow, text="First Name").grid(row=0, column=0)
+fname = StringVar()
+fnameEntry = Entry(tkWindow, textvariable=fname).grid(row=0, column=1)
+
+lnameLabel = Label(tkWindow, text="Last Name").grid(row=1, column=0)
+lname = StringVar()
+lnameEntry = Entry(tkWindow, textvariable=lname).grid(row=1, column=1)  
+
+usernameLabel = Label(tkWindow, text="User Name").grid(row=2, column=0)
+username = StringVar()
+usernameEntry = Entry(tkWindow, textvariable=username).grid(row=2, column=1)  
+
+passwordLabel = Label(tkWindow,text="Password").grid(row=3, column=0)  
+password = StringVar()
+passwordEntry = Entry(tkWindow, textvariable=password, show='*').grid(row=3, column=1)  
+
+validateLogin = partial(validateLogin, fname, lname, username, password)
+
+loginButton = Button(tkWindow, text="Login", command=validateLogin).grid(row=4, column=0)  
+
+tkWindow.mainloop()
