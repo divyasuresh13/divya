@@ -1,0 +1,14 @@
+<div class="about lobster-font-family">
+    <div class="container">
+        <h2 class="text-center text-capitalize">About Us</h2>
+        <img src="{% static 'images/6.jpg' %}">
+        <div class="text-block">
+            <h4>India's fastest growing ticket booking platform</h4>
+            <p>Bus Reservation, over the years, has strived to deliver easy booking solutions to its customers. Our continued efforts have resulted into AbhiBus becoming one of the leading ticketing platforms in India for various Bus services. We have a strong presence with a ticket inventory from over 2500 bus partners and 100000 route options our  website.</br>
+
+Founded in the year 2008, Reservation Services (India) Private Limited is a pioneer in providing end-to-end software and other value-added solutions such as e-ticketing systems, fleet management solutions, vehicle tracking systems, passenger information systems, logistics management backed by a 24x7 customer support center. The company also provides technology solutions to more than 300 large private bus partners in India, 5 state transport corporations and 2 international bus partners. Bus Reservation is an ISO 9001:2008 certified company.</p>
+<button><a href="#">Read more</button></a>
+       
+    </div>
+</body>
+</html>
