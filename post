@@ -1,0 +1,23 @@
+def post(self,request,*args,**kwargs):
+		self.object=None
+		form_class = self.get_form_class()
+		user_form = self.get_form(form_class)
+		cust_form = CustomerForm(self.request.POST)
+		if (user_form.is_valid() and cust_form.is_valid()):
+			return self.form_valid(user_form, cust_form)
+		else:
+			return self.form_invalid(user_form, cust_form)
+
+	def form_valid(self,user_form,cust_form):
+		self.object = user_form.save() #User model save
+		self.object.is_staff=True # edit user object
+		self.object.save()
+		cust_obj = cust_form.save(commit=False) #Customer Model save(contact,address,place,pincode,gender)
+		cust_obj.basic_details=self.object #saving OneToOnefield ,edit cust_obj
+		cust_obj.save()
+		return super(CustomerRegister, self).form_valid(user_form)
+
+	def form_invalid(self,user_form,cust_form):
+		return self.render_to_response(self.get_context_data(form1=user_form,form2=cust_form))
+	def get_success_url(self, **kwargs):
+		return('/general/home/')
