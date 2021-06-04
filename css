@@ -1,0 +1,21 @@
+.heading{
+  font-size: 32px;
+  font-family: 'Arvo', serif;
+}
+.productclass{
+  background-color: GhostWhite;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.productclass img{
+  padding-bottom: 10px;
+}
+.alert{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.productclass:hover{
+  transform: scale(1.1);
+  background-color: Gainsboro;
+}
