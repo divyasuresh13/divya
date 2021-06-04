@@ -1,0 +1,9 @@
+STEP 2 – ADDING RAZORPAY KEYS
+So, we are done with the initial set up. Let’s move on to the main stuff. Open this link. Create an account or log in if you own one already. Open this link now to get your keys. We will need to copy the keys, both the secret key and the public key.
+
+Navigate to the views.py file and paste both the keys in the index view where specified (replace TEST_KEY and SECRET_KEY with your keys).
+
+Similarly copy your test key and now open the index.html file. There, in the data-key variable, replace the TEST_KEY with your copied test key value.
+
+STEP 3 – CHECKING OUR INTEGRATION
+So, it’s all in-place now! Now run the server and pen Port 8000. A page like this (if you kept the same index.html styling) will appear.
