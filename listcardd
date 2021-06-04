@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User List</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
+</head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style3.css'%}"> -->
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+      <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+<body>
+  <h3>All Users......</h3>
+<div class="bodyofpage">
+      
+      
+    <h1><center><b><p class="heading">All Users</p></b></center></h1> 
+     <div class="container">
+
+  	{% for item in use %}
+  	 <div class="col-sm-4 productclass">
+          <!-- <center><img class="card-img-top" src="{{ item.cover_img.url }}" alt="{{item.cover_img}}" style="height: 10rem; width: 10rem ;" > -->
+          <div class="card-img-overly"></div>
+          </center>
+          <center>
+          <p class="card-text">{{item.basic_details.first_name}} {{item.basic_details.last_name}}</p>
+          <p class="card-text">{{item.basic_details.username}}</p>
+          <p class="card-text">{{item.basic_details.email}}</p>
+          <p class="card-text">{{item.contact}}</p>
+          <p class="card-text">{{item.place}}</p>
+          
+          </center>
+        </div>
+    {% endfor %}
+      </div>
+    </div>
