@@ -1,0 +1,97 @@
+from django.shortcuts import render,redirect
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,login
+
+from customer.models import CustomerModel
+from customer.forms  import UserForm,CustomerForm,LoginForm
+from django.views.generic import FormView,View
+
+
+
+
+# Create your views here.
+
+class CustomerRegister(FormView):
+	template_name = 'customer_register.html'
+	form_class = UserForm
+
+	def get(self,request,*args,**kwargs):
+		self.object=None
+		form_class = self.get_form_class()
+		user_form = self.get_form(form_class)
+		cust_form = CustomerForm()
+		return self.render_to_response(self.get_context_data(form1=user_form, form2=cust_form))
+
+	def post(self,request,*args,**kwargs):
+		self.object=None
+		form_class = self.get_form_class()
+		user_form = self.get_form(form_class)
+		cust_form = CustomerForm(self.request.POST)
+		if (user_form.is_valid() and cust_form.is_valid()):
+			return self.form_valid(user_form, cust_form)
+		else:
+			return self.form_invalid(user_form, cust_form)
+
+	def form_valid(self,user_form,cust_form):
+		self.object = user_form.save() #User model save
+		self.object.is_staff=True # edit user object
+		self.object.save()
+		cust_obj = cust_form.save(commit=False) #Customer Model save(contact,address,place,pincode,gender)
+		cust_obj.basic_details=self.object #saving OneToOnefield ,edit cust_obj
+		cust_obj.save()
+		return super(CustomerRegister, self).form_valid(user_form)
+
+	def form_invalid(self,user_form,cust_form):
+		return self.render_to_response(self.get_context_data(form1=user_form,form2=cust_form))
+	def get_success_url(self, **kwargs):
+		return('/gen/home/')
+
+
+class CustomerList(View):
+	template_name = 'cust_list.html'
+	def get(self,request):
+		bk_list = CustomerModel.objects.all()
+		context = {
+		'cust' :bk_list
+		}
+		return render(request,self.template_name,context)
+
+class LoginView(View):
+	template_name = "login.html"
+	form_class = LoginForm
+
+	def get(self,request):
+		form = LoginForm
+		context ={
+			'form':form
+		}
+		return render(request,self.template_name,context)
+
+	def post(self,request):
+
+		username = request.POST['username']
+		password = request.POST['password']
+		user = authenticate(request, username=username, password=password)
+		if user is not None:
+			# uname and passwords are verified, proceed login procedures
+			login(request,user)
+			uname = request.user
+			try:
+				user_obj = User.objects.get(username=uname)
+				cust = CustomerModel.objects.get(basic_details=user_obj)
+			except:
+				user_obj=None
+				cust=None
+			if request.user.is_superuser:
+				return redirect('/mas/listfeeds')
+			elif cust:
+				return redirect('/gen/home')
+			else:
+				return redirect('/cus/login')
+
+
+		else:
+			return redirect('/cus/login')
+
+
+
