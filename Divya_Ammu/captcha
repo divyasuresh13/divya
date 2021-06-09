@@ -1,0 +1,16 @@
+#Recaptcha stuff
+        clientkey = request.POST['g-recaptcha-response']
+        secretkey = '6Le5KSEbAAAAAPaC5w9rErgiLrwMSUumLt9aU5lp'
+        captchaData = {
+            'secret' : secretkey,
+            'response' : clientkey
+        }
+        r = requests.POST('https://www.google.com/recaptcha/api/siteverify',data=captchaData)
+        response = json.loads(r.text)
+        verify = response['success']
+        print('Your success is: ',verify)
+        if verify:
+                return HttpResponse('<script> alert("success");</script')
+        else:
+            return HttpResponse('<script> alert("not success");</script')
+
