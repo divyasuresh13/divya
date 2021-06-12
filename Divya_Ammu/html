@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Add New Bus</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    </head>
+	<body style="background-image: url({% static 'images/bus11.jpeg' %}); background-size: 2000px 1300px; background-repeat: no-repeat;">
+		<div class="container">
+		<div class="row"> 
+    	<div class="col-md-4 text-center marb-10"> 
+    	<div class="about lobster-font-family">
+    	<h1 style="text-align: center; color: Black" class="header-h">ADD NEW BUS</h1>
+    </div>
+  
+    <form method='post' enctype="multipart/form-data" style="text-align:center; text-align: center; color: Black; background-color: #C0C0C0; text-align: left;"> 
+
+   		{% csrf_token %}
+
+   		{{bus_form.as_p}}
+
+   		<button type="submit" class="btn btn-theme pull-left" value="submit" style="background-color: #008CBA; 
+      color: #FFFFFF;">Submit</button>	
+   	</form>
+</body>
+</html>
