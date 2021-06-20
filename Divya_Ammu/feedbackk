@@ -1,0 +1,25 @@
+<div class="bodyofpage">
+      
+      
+    <h1><center><b><p class="heading">Feedbacks</p></b></center></h1> 
+     <div class="container" style="font-size: 15px;">
+     {% for item in feedbackk %}
+
+        <div class="col-sm-3 productclass bg-primary mb-3">
+
+          <!-- <center><img class="card-img-top" src="{{ item.cover_img.url }}" alt="{{item.cover_img}}" style="height: 10rem; width: 10rem;" > -->
+          <div class="card-img-overly"></div>
+          </center>
+          <center>
+          <!-- <a href="{% url 'bus_detail' item.id %}"><p class="card-text text-warning">{{item.bus_number}}</p></a><br> -->
+          <p class="card-text" >{{item.name}}</p>
+          <p class="card-text" >{{item.email}}</p> 
+          <p class="card-text" >{{item.contact}}</p>    
+          <p class="card-text" >{{item.message}}</p>                        
+          <!-- <a href="{% url 'new_update' item.id %}" class="btn btn-success">Update</a> -->
+          <a href="{% url 'delete_feed' item.id %}" class="btn btn-danger">Delete</a>
+          </center>
+        </div>
+    {% endfor %}
+      </div>
+    </div>
