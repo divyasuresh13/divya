@@ -1,0 +1,26 @@
+ <a href="{% url 'new_update' item.id %}" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span></a>
+          <a href="{% url 'delete_bus' item.id %}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-trash"></span></a>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <head>
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>Bus Details </title>
