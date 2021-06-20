@@ -1,0 +1,18 @@
+class FeedbackView(View):
+	template_name = 'feedback.html'
+	def get(self,request):
+		feed_list = ContactModel.objects.all()
+		context = {
+		'feedbackk' :feed_list
+		}
+		return render(request,self.template_name,context)
+
+class DeleteFeedbackView(View):
+	template_name = 'feedback.html'
+	def get(self,request,pk):
+		cat_obj = ContactModel.objects.get(id=pk).delete()
+		feed_list = ContactModel.objects.all()
+		context = {
+		'feedbackk' :feed_list
+		}
+		return render(request,self.template_name,context)
