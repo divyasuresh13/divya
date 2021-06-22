@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="{% static 'css/style7.css' %}">
+    </head>
+	<body style="background-image: url({% static 'images5/m1.jpeg' %}); background-size: 2000px 1500px; background-repeat: no-repeat;">
+		<div class="container">
+		<div class="row"> 
+    	<div class="col-md-4 text-center marb-10"> 
+    	<div class="about lobster-font-family">
+    	<h1 style="text-align: center; color: #FF0000" class="header-h">LOGIN</h1>
+    </div>
+	<form method="post" style="text-align: center; color: Black; border-style: solid; border-color:#32ABDC;  text-align: left;">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="btn btn-theme pull-left" value="submit" style="background-color: #008CBA;color: #FFFFFF; text-align: center;">Submit</button>
+		<button type="submit" formaction="{% url 'emp_reg' %}" style="background-color: #008CBA;color: #FFFFFF; margin-right: -90px;">Sign up here!!</button>
+	</form>
+
+</body>
+</html>
