@@ -1,0 +1,49 @@
+class UserProfile(View):
+	template_name = 'user_profile.html'
+
+	def get(self,request):
+		loginid_username = request.user
+		user_objj = User.objects.get(username=loginid_username)
+		cust_objj = UserModel.objects.get(basic_details=user_objj)
+		context = {
+		'userr' :cust_objj
+		}
+		return render(request,self.template_name,context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bodyofpage">
+      
+      
+    <h1><center><b><p class="heading">Profile</p></b></center></h1> 
+     <div class="container" style="font-size: 15px; ">
+        <div class="col-sm-3 productclass bg-primary mb-3" >
+
+          <!-- <center><img class="card-img-top" src="{{ item.cover_img.url }}" alt="{{item.cover_img}}" style="height: 10rem; width: 10rem;" > -->
+          <div class="card-img-overly"></div>
+          </center>
+          <center>
+        <h1><p class="card-text text-light">Name : {{userr.basic_details.first_name|title}}
+      {{userr.basic_details.last_name|title}}</p></h1><br>
+          <p class="card-text" >Email : {{userr.basic_details.email}}</p>
+          <p class="card-text" >Contact : {{userr.contact}}</p>
+          <p class="card-text" >Address: {{userr.address}}</p> 
+          <p class="card-text" >Place: {{userr.place}}</p>  
+          <a href="{% url 'user_update' userr.id %}" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span></a>
+
+
+        </center>
+        </div>
+      </div>
+    </div>
