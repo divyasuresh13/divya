@@ -1,0 +1,52 @@
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+ 
+                       
+
+
+<div class="topnav">
+  <a class="active" href="{% url 'job_list2_page' %}">Job Details</a>
+  <a href="{% url 'category_details' %}">Job categories</a>
+  <a class="active" href="{% url 'employe_listt' %}">Employee details</a>
+  <a href="{% url 'emlistt_list' %}">Employer details</a>
+  <a class="active" href="{% url 'cand_list2_page' %}">Applyed_Candidates</a>
+  <a href="{% url 'feedback_page' %}">Feedbacks</a>
+  <a class="active" href="{% url 'home_page' %}">Logout</a>
+
+
+
+</div>
+
+
+
+</style>
