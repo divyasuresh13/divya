@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>User Register</title>
+    <link rel="stylesheet" href="{% static 'css/style4.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style6.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/overwrite.css' %}">
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet"> 
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />   
+    <!-- =======================================================
+        Theme Name: RISHABH BUS
+        Theme URL: https://bootstrapmade.com/RISHABH BUS-free-simple-landing-page-template/
+        Author: BootstrapMade
+        Author URL: https://bootstrapmade.com
+    ======================================================= -->
+    </head>
+	<body style="background-image: url({% static 'images/new2.jpg' %}); background-size: 2000px 1500px; background-repeat: no-repeat;">
+		<div class="container">
+		<div class="row"> 
+    	<div class="col-md-4 text-center marb-10"> 
+    	<div class="about lobster-font-family">
+    	<h1 style="text-align: center; color: black; padding-left: 500px;" class="header-h">User Register</h1>
+    </div>
+     <style>
+#mySidenav a {
+  position: absolute;
+  left: -350px;
+  transition: 0s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a: hover {
+  left: 0px;
+}
+
+#about {
+  top: 20px;
+  left: -50px;
+  background-color: #04AA6D;
+}
+
+#blog {
+  top: 80px;
+  background-color: #2196F3;
+}
+
+#projects {
+  top: 140px;
+  background-color: #f44336;
+}
+
+#contact {
+  top: 200px;
+  background-color: #555
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav" >
+  <a href="{% url 'index_page' %}" id="about" style="padding-top:-50px;">Home</a>
+  <a href="{% url 'about_us_page' %}" id="blog">AboutUs</a>
+  <a href="{% url 'contact_page' %}" id="projects">Contact
+<!--   <a href="#" id="contact">Contact</a>
+ --></div>
+
+<!-- <div style="margin-left:80px;">
+  <h2>Hoverable Sidenav Buttons</h2>
+  <p>Hover over the buttons in the left side navigat</p>
+</div> -->
+
+
+                    
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->       
+    </header><!--/header--> 
+   <form method='post' enctype="multipart/form-data" style="text-align:center; text-align: center; color: White; background-color: #1E8585; text-align: left; height:1010px;"> 
+
+   		{% csrf_token %}
+
+   		{{form1.as_p}}
+
+   		{{form2.as_p}}
+
+   		<button type="submit" class="btn btn-theme pull-left" value="submit" style="background-color: #008CBA; 
+      color: #FFFFFF;">Submit</button>  
+   	</form>
+</body>
+</html>
