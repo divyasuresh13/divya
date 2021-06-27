@@ -1,0 +1,42 @@
+body
+{
+	background-position: center;
+	background-repeat: no-repeat;
+	font-family: 'verdana';
+	font-size: 20px;
+	padding-top: 60px;
+	width: 30%;
+	width: 100vw;
+
+	line-height: 1em;
+	font-weight: normal;
+
+}
+input{
+	display: block; 
+}
+textarea{
+	display: block;
+	text-align: left;
+}
+button{
+	font-size: 1.0em;
+	float: left;
+	width: 150px;
+	color: rgb(100, 149, 237);
+}
+button:hover{
+	background-color: rgb(32, 217, 241);
+}
+form{
+	background-color: burlywood;
+	width: 350px;
+	height: 600px;
+	margin: 0 auto;
+	padding: 15px;
+	position: relative;
+	left: 80px
+	background:red;
+	border-radius: 3px;
+	padding-left: 3px;
+}
