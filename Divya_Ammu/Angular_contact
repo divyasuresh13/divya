@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+ <div ng-app="myApp" ng-controller="myCtrl">
+    <form ng-submit="myFunc()">
+ 	<p>Firstname: <input type="text" ng-model="firstname"></p>
+ 	<p>LastName:  <input type="text"  ng-model="lastname"></p>
+ 	<p>Country:   <input type="text"   ng-model="country"></p>
+ 	<p>Subject:   <input type="text"   ng-model="subject"></p>
+ 	<p>Email:     <input type="text"     ng-model="email"></p>
+    <input type="submit">
+</form>
+<p>{{myTxt}}</p>
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+    $scope.myTxt = "Nothing";
+    $scope.myFunc = function () {
+        $scope.myTxt ="Submit successfully";
+    }
+});
+
+</script>
+ 
+</body>
+</html>
